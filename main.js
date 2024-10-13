@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
   if (!swalShown) {
     Swal.fire({
       title: '<span class="tit-bienvenida">Te damos la bienvenida a nuestro sitio de cosmética natural</span>',
-      imageUrl: './assets/logo.png',
+      imageUrl: '/TrabajoFinal-Javascript/assets/logo.png',
       imageWidth: 150, 
       imageHeight: 150,
       confirmButtonText: 'Aceptar'
