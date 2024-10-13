@@ -3,7 +3,6 @@ const contenedorProd = document.getElementById("contenedorProduct");
 const vercarrito = document.getElementById("vercarrito");
 const cantidadCarrito = document.getElementById("cantidadCarrito");
 const modalContainer = document.getElementById("modalContainer");
-/*const modalFinal = document.getElementById("modal.finalizar");*/
 
 swalShown = false;
 document.addEventListener('DOMContentLoaded', function() {
@@ -18,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     swalShown = true;
   }
 });
+
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];  
 const getProducts = async () => {
   try {
@@ -32,7 +32,7 @@ const getProducts = async () => {
       contenedor.className = "card contenedorProd";      
       contenedor.innerHTML = `
         <img src="${producto.img}" alt="${producto.nombre}">
-        <h2>${producto.nombre}</h2>    
+        <h2 class = "nombre-prod">${producto.nombre}</h2>    
         <p class="precio">$${producto.precio}</p>
       `;      
       let agregarCarrito = document.createElement("button");
@@ -58,19 +58,36 @@ const getProducts = async () => {
             img: producto.img,
             cantidad: producto.cantidad,
           });
-        }
-        
+        }        
         carritoContador();
         localSave();
+
+        Toastify({
+          text: "Producto agregado",
+          duration: 1000,
+          destination: "https://github.com/apvarun/toastify-js",
+          newWindow: true,
+          gravity: "top",
+          position: "right", 
+          stopOnFocus: true, 
+          offset: {
+              x: "1.5rem", 
+              y: "1.5rem", 
+            },
+          className: "toasti1",
+          onClick: function(){} 
+      }).showToast();
+
       });
     });
+
   } catch (error) {
     console.error(error.message);
   }
+
 };
 
 getProducts();
-
 
 
 //localStorage
@@ -95,7 +112,7 @@ const pintarCarrito = () => {
 
   modalContainer.append(modalHeader);
 
-  const modalButton = document.createElement("h3");
+  const modalButton = document.createElement("h6");
   modalButton.innerText = "X";
   modalButton.className = "modal-header-button";
 
@@ -112,7 +129,7 @@ const pintarCarrito = () => {
       carritoContent.className = "modal-content";
       carritoContent.innerHTML = `
         <img src="${producto.img}">
-        <h3>${producto.nombre}</h3>    
+        <p class = "nombre-prod2">${producto.nombre}</p>    
         <p class="precio">$${producto.precio}</p>
         <span class="restar"> - </span>
         <p>Cantidad: ${producto.cantidad}</p>
@@ -160,9 +177,7 @@ const pintarCarrito = () => {
                   x: "1.5rem", 
                   y: "1.5rem", 
                 },
-              style: {
-                background: "rgba(44, 42, 42, 0.699)",
-              },
+              className: "toasti2",
               onClick: function(){} 
           }).showToast();
       });
@@ -208,12 +223,18 @@ const eliminarProducto = (id) => {
 
 //Contador de prod del carrito
 const carritoContador = () => {
-  const carritoLength = carrito.length;
-  localStorage.setItem("carritoLength", JSON.stringify(carritoLength));
+  const totalProductos = carrito.reduce((acc, producto) => acc + producto.cantidad, 0); // Sumar la cantidad de cada producto
 
-  cantidadCarrito.innerText = JSON.parse(localStorage.getItem("carritoLength"));
-}
+  // Guardar la cantidad total en el localStorage
+  localStorage.setItem("carritoLength", JSON.stringify(totalProductos));
+
+  // Actualizar el contador en el ícono del carrito
+  cantidadCarrito.innerText = totalProductos;
+};
+
+// Llamar la función para actualizar el contador
 carritoContador();
+
 
 //Modal Finalizar Compra
 const abrirFormularioCompra = () => {
@@ -274,8 +295,8 @@ formulario.addEventListener("submit", (e) => {
 
 
   modalContainer.innerHTML = `
-        <h2 class="h2-m">Listo, ${nombre}!</h2>
-        <p class="p-m">Su pedido será enviado a la dirección: ${direccion} a la brevedad. ¡Muchas gracias!</p>
+        <h2>Listo, ${nombre}!</h2>
+        <p>Su pedido será enviado a la dirección: ${direccion} a la brevedad. ¡Muchas gracias!</p>
         <button class="cerrar-modal">Cerrar</button>
       `;
 
