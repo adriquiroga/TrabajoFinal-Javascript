@@ -1,0 +1,40 @@
+[
+  {
+    "id": 1,
+    "nombre": "Crema Hidratante",
+    "precio": 500,
+    "img": "assets/productos/crema.jpg",
+    "cantidad": 1
+  },
+  {
+    "id": 2,
+    "nombre": "Jabón de Rosas",
+    "precio": 300,
+    "img": "assets/productos/jabon.jpg",
+    "cantidad": 1
+  },
+  {
+    "id": 3,
+    "nombre": "Esencia de Lavanda",
+    "precio": 400,
+    "img": "assets/productos/aceite.jpg",
+    "cantidad": 1
+  },
+  {
+    "id": 4,
+    "nombre": "Champú Orgánico",
+    "precio": 450,
+    "img": "assets/productos/shampoo.jpg",
+    "cantidad": 1
+  },
+  {
+    "id": 5,
+    "nombre": "Bálsamo para Labios",
+    "precio": 150,
+    "img": "assets/productos/balsamo.jpg",
+    "cantidad": 1
+  }
+]
+
+
+

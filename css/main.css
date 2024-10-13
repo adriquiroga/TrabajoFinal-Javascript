@@ -1,0 +1,445 @@
+
+body {
+  margin: 0;
+  padding: 0;
+}
+h1{
+  font-size: 45px;
+}
+
+h2{
+  font-size: 25px;
+}
+h3{
+  font-size: 20px;
+}
+
+/******* HEADER ********/
+
+header {
+  background-image: url("../assets/natural6.jpg");
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100%;
+  background-size: cover;
+  background-position: 100% 35%;
+  background-attachment: fixed;
+  opacity: 0.9;
+}
+header nav div {
+  display: flex;
+  justify-content: left;
+  padding-right: 30px;
+}
+header nav div img {
+  width: 150px;
+  height: auto;
+  margin-top: 0px;
+  margin-left: 10px;  
+}
+header nav div div ul li a {
+  color:black !important;
+  font-size: 30px !important;
+  padding: 0 15px !important;
+}
+header nav div div ul li a:hover {
+  text-decoration: underline;
+}
+header nav div div i {
+  cursor: pointer;
+  padding-left: 15px;
+}
+.swal2-popup {
+  background-color:#e4f3f6;
+}
+
+.tit-bienvenida {
+  font-family:'Lucida Sans';
+  font-style: italic;
+  color: #000; 
+  font-size: 26px; 
+  text-align: center;
+}
+
+.swal2-confirm {
+  background-color:#f0ffff;
+  font-family:'Lucida Sans';
+  color:#000;
+  font-weight: bold;
+  font-size: 16px; 
+  border-radius: 1px;
+  border: none; 
+  padding: 5px 15px;
+}
+
+
+/*****  MAIN *****/
+
+.titulo{
+  padding: 15px;
+  text-align: center;
+  font-size: 45px;
+  color:#000;
+}
+
+div {
+  width: 90%;
+  max-height: 1200px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 30px;
+  margin-left: 80px;
+  margin-right: 80px;
+  margin-bottom: 40px;
+}
+div .card {
+  max-width: 230px;
+  margin: auto;
+  margin: 20px auto;
+  text-align: center;
+  font-family:'Lucida Sans';
+  font-size: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.41);
+}
+div .card img {
+  width: 100%;
+  height: 250px;
+  transition: 2s;
+  object-fit: cover;
+}
+
+div .card .boton {
+  border: none;
+  padding: 12px;
+  color:#0000ff;
+  background-color:#e4f3f6;
+  font-size: 15px;
+  width: 100%;
+  border-radius: 5px;
+}
+div .card .boton:hover {
+  opacity: 0.7;
+}
+
+.modal-container {
+  width: 80%;
+  margin: none;
+  max-height: 450px;
+  color: black;
+  background-color: rgb(221, 236, 245);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  overflow: auto;
+  z-index: 9;
+  top: 12vh;
+  border-radius: 10px;
+}
+.precio{
+  font-size: 20px;
+}
+.modal-container:-webkit-scrollbar {
+  display: none;
+}
+.modal-container .modal-header {
+  display: flex;
+  justify-content: space-around;
+  background-color: transparent;
+  color: black;
+  width: 100%;
+}
+.modal-container .modal-header h1 {
+  justify-self: start;
+  font-family:'Lucida Sans';
+  font-style: italic;
+  font-size: 40px;
+}
+.modal-container .modal-header h2 {
+  cursor: pointer;
+  font-family: 'Lucida Sans';  
+}
+.modal-container .modal-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 70%;
+  margin: 10px;
+  font-family: 'Lucida Sans';
+}
+.modal-container .modal-content img {
+  height: 120px;
+  width: 120px;
+}
+.modal-container .modal-content .restar {
+  cursor: pointer;
+  font-size: 15px;
+}
+.modal-container .modal-content .sumar {
+  cursor: pointer;
+  font-size: 15px;
+}
+.modal-container .total-content {
+  font-family: 'Lucida Sans';
+  background-color: transparent;
+  color:#0000ff;
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+  padding-top: 30px;
+  margin-bottom: 40px;
+}
+.modal-container .delete-product {
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: bolder;
+}
+.modal-container .finalizar-compra {
+  background-color:#4f4df1;
+  color: white;
+  padding: 5px 25px;
+  border-radius: 10px;
+  font-family: 'Lucida Sans';
+  font-size: 15px;
+  border: none;
+  display: block;
+  margin: auto;
+  margin-bottom: 30px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.41);
+}
+
+.modal-container .cerrar-modal {
+  font-family: 'Lucida Sans';
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-bottom: 50px;
+  border: none;
+  border-radius: 5px;
+  background-color: rgba(26, 25, 25, 0.703);
+  color: white;
+  font-size: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.41);
+}
+
+
+/****** FOOTER ******/
+
+.footerbar-img {
+  width: 90px;
+  height: auto;
+  justify-content: start;
+  align-items: start;
+  /*padding: 10px;*/
+  margin: 20px;
+}
+
+footer div p {
+  margin-right: 20px;
+  margin-left: 40px;
+}
+footer div a {
+  margin-right: 10px;
+}
+
+.color-foot {
+  background-color:rgb(235, 230, 230);  
+}
+
+
+/******************************************/
+/*
+@media only screen and (max-width: 767px) {
+  header {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: 100% 35%;
+    background-attachment: fixed;
+    opacity: 0.9;
+  }
+  header nav div {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+  }
+  header nav div img {
+    width: 35%;
+    padding-left: 20px;
+    padding-top: 40px;
+  }
+  header nav div div ul li a {
+    font-family: RusticusStd;
+    color: #C7C6D5 !important;
+    font-size: 20px !important;
+    padding: 0 15px !important;
+  }
+  /*
+  section {
+    height: 15vh;
+    margin-top: 35px;
+  }
+  section h2 {
+    padding: 15px;
+    text-align: center;
+    font-size: 35px;
+    font-family: RusticusStd;
+    color: rgba(0, 0, 0, 0.7);
+  }*/
+/*
+  main .container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 35px;
+    column-gap: 25px;
+  }
+  main .container .card {
+    width: 32%;
+    border: none;
+  }
+  main .container .card img {
+    max-width: 100%;
+  }
+  main .container .card h3 {
+    margin-top: 15px;
+    text-align: center;
+    font-family: RusticusStd;
+    font-size: 18px;
+  }
+  main .container .card p {
+    text-align: center;
+    font-family: RusticusStd;
+    font-size: 15px;
+  }
+}
+@media only screen and (min-width: 767px) and (max-width: 1023px) {
+  header {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: 100% 35%;
+    background-attachment: fixed;
+    opacity: 0.9;
+  }
+  header nav div {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+  }
+  header nav div img {
+    width: 28%;
+    padding-left: 20px;
+    padding-top: 40px;
+  }
+  header nav div div ul li a {
+    font-family: RusticusStd;
+    color: #C7C6D5 !important;
+    font-size: 25px !important;
+    padding: 0 15px !important;
+  }
+  /*
+  section {
+    height: 15vh;
+    margin-top: 35px;
+  }
+  section h2 {
+    padding: 15px;
+    text-align: center;
+    font-size: 40px;
+    font-family: RusticusStd;
+    color: rgba(0, 0, 0, 0.7);
+  }*/
+  /*
+  main .container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 35px;
+    column-gap: 25px;
+  }
+  main .container .card {
+    width: 32%;
+    border: none;
+  }
+  main .container .card img {
+    max-width: 100%;
+  }
+  main .container .card h3 {
+    margin-top: 15px;
+    text-align: center;
+    font-family: RusticusStd;
+    font-size: 20px;
+  }
+  main .container .card p {
+    text-align: center;
+    font-family: RusticusStd;
+    font-size: 15px;
+  }
+}
+@media only screen and (min-width: 1023px) {
+  header {
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: 100% 21%;
+    background-attachment: fixed;
+    opacity: 0.9;
+  }
+  header nav div {
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 30px;
+  }
+  header nav div img {
+    width: 20%;
+    padding-left: 20px;
+    padding-top: 40px;
+  }
+  header nav div div ul li a {
+    font-family: RusticusStd;
+    color: #C7C6D5 !important;
+    font-size: 30px !important;
+    padding: 0 15px !important;
+  }
+  header nav div div ul li a:hover {
+    text-decoration: underline;
+  }
+  /*
+  section {
+    height: 15vh;
+    margin-top: 35px;
+  }
+  section h2 {
+    padding: 15px;
+    text-align: center;
+    font-size: 45px;
+    font-family: RusticusStd;
+    color: rgba(0, 0, 0, 0.7);
+  }*/
+  /*
+  main .container {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 35px;
+    column-gap: 25px;
+  }
+  main .container .card {
+    width: 32%;
+    border: none;
+  }
+  main .container .card img {
+    max-width: 100%;
+  }
+  main .container .card h3 {
+    margin-top: 15px;
+    text-align: center;
+    font-family: RusticusStd;
+    font-size: 25px;
+  }
+  main .container .card p {
+    text-align: center;
+    font-family: RusticusStd;
+    font-size: 20px;
+  }
+}*/
