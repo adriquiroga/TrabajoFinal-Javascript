@@ -134,6 +134,7 @@ const pintarCarrito = () => {
           if(producto.cantidad !== 1) {
              producto.cantidad--;
           }
+          carritoContador();
           pintarCarrito();
           localSave();
       });
@@ -141,6 +142,7 @@ const pintarCarrito = () => {
       let sumar = carritoContent.querySelector(".sumar");
       sumar.addEventListener("click", () => {
           producto.cantidad++;
+          carritoContador();
           pintarCarrito();
           localSave();
       });
