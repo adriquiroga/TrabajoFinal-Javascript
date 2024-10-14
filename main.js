@@ -264,6 +264,10 @@ formulario.addEventListener("submit", (e) => {
   const nombre = document.getElementById("nombre").value;
   const direccion = document.getElementById("direccion").value;
 
+  carrito.length = 0;
+  carritoContador();
+  localSave();
+
   modalContainer.innerHTML = `
         <h6>Listo, ${nombre}!</h6>
         <p>Su pedido será enviado a la dirección: ${direccion} a la brevedad. ¡Muchas gracias!</p>
