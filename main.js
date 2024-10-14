@@ -232,27 +232,27 @@ formulario.className = "formulario-compra";
 formulario.innerHTML = `
     <div>
         <label for="nombre">Nombre:</label>
-        <input type="text" id="nombre" name="nombre" required>
+        <input type="text" id="nombre" name="nombre" value="Adriana" required>
     </div>
     <div>
         <label for="direccion">Dirección:</label>
-        <input type="text" id="direccion" name="direccion" required>
+        <input type="text" id="direccion" name="direccion" value="Caseros 2550" required>
     </div>
     <div>
         <label for="codigop">Código postal:</label> 
-        <input type="text" id="codigop" name="codigop" required>
+        <input type="text" id="codigop" name="codigop" value="5000" required>
     </div>
     <div>
         <label for="tarjeta">Número de tarjeta débito/crédito:</label>
-        <input type="number" id="tarjeta" name="tarjeta" required>
+        <input type="number" id="tarjeta" name="tarjeta" value="458965112245" required>
     </div>
     <div>
         <label for="nombretarjeta">Nombre y Apellido del titular:</label> 
-        <input type="text" id="nombretarjeta" name="nombretarjeta" required>
+        <input type="text" id="nombretarjeta" name="nombretarjeta" value="Adriana Garcia" required>
     </div>    
     <div>
         <label for="codigo">Código de seguridad:</label>
-        <input type="number" id="codigo" name="codigo"  required>
+        <input type="number" id="codigo" name="codigo" value="111" required>
     </div>    
     <button type="submit" class="finalizar-compra">Confirmar Compra</button>
 `;
